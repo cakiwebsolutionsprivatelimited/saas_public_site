@@ -88,7 +88,7 @@ export default function FeaturedAppsSection() {
               <a
                 key={app.id}
                 href={`/apps/${app.id}`}
-                className="group relative flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:ring-2 hover:ring-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+                className="group relative flex h-full flex-col rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:ring-2 hover:ring-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
                 aria-label={`Learn more about ${app.name} app`}
               >
                 {/* Top: Icon & Badge */}

@@ -83,7 +83,7 @@ export default function HeroSection() {
             {/* Mobile Ecosystem View (< lg) */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:hidden">
                {/* Core Card */}
-               <div className="col-span-2 sm:col-span-3 flex flex-col items-center justify-center p-6 rounded-2xl border-2 border-primary bg-primary/5 shadow-inner">
+               <div className="col-span-2 sm:col-span-3 flex flex-col items-center justify-center p-6 rounded-xl border-2 border-primary bg-primary/5 shadow-inner">
                  <Layers className="h-10 w-10 text-primary mb-3" />
                  <span className="font-bold text-xl">{SITE_CONFIG.name} Core</span>
                  <span className="text-sm text-muted-foreground">Centralized Database</span>
@@ -117,7 +117,7 @@ export default function HeroSection() {
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
 
                {/* Center Core */}
-               <div className="relative z-20 flex flex-col items-center justify-center w-48 h-48 rounded-3xl border-2 border-primary bg-background shadow-2xl shadow-primary/20">
+               <div className="relative z-20 flex flex-col items-center justify-center w-48 h-48 rounded-xl border-2 border-primary bg-background shadow-2xl shadow-primary/20">
                   <Layers className="h-12 w-12 text-primary mb-4" />
                   <span className="font-extrabold text-2xl text-foreground">{SITE_CONFIG.name}</span>
                   <span className="text-sm text-primary font-bold tracking-wide uppercase mt-1">Core Platform</span>
@@ -126,7 +126,7 @@ export default function HeroSection() {
                {/* Orbiting App Cards */}
                
                {/* CRM */}
-               <div className="absolute top-[8%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
+               <div className="absolute top-[8%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600">
                     <Users className="h-6 w-6"/>
                   </div>
@@ -137,7 +137,7 @@ export default function HeroSection() {
                </div>
                
                {/* Billing */}
-               <div className="absolute top-[12%] right-[2%] z-30 flex w-48 items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
+               <div className="absolute top-[12%] right-[2%] z-30 flex w-48 items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600">
                     <Receipt className="h-6 w-6"/>
                   </div>
@@ -148,7 +148,7 @@ export default function HeroSection() {
                </div>
 
                {/* Inventory */}
-               <div className="absolute top-[45%] left-0 z-30 flex w-48 items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
+               <div className="absolute top-[45%] left-0 z-30 flex w-48 items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-600">
                     <Package className="h-6 w-6"/>
                   </div>
@@ -159,7 +159,7 @@ export default function HeroSection() {
                </div>
 
                {/* HRMS */}
-               <div className="absolute top-[45%] right-0 z-30 flex w-48 items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
+               <div className="absolute top-[45%] right-0 z-30 flex w-48 items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-600">
                     <Briefcase className="h-6 w-6"/>
                   </div>
@@ -170,7 +170,7 @@ export default function HeroSection() {
                </div>
 
                {/* Projects */}
-               <div className="absolute bottom-[12%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
+               <div className="absolute bottom-[12%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-600">
                     <LayoutList className="h-6 w-6"/>
                   </div>
@@ -181,7 +181,7 @@ export default function HeroSection() {
                </div>
 
                {/* Helpdesk */}
-               <div className="absolute bottom-[8%] right-[8%] z-30 flex w-48 items-center gap-4 rounded-2xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
+               <div className="absolute bottom-[8%] right-[8%] z-30 flex w-48 items-center gap-4 rounded-xl border border-border bg-card p-4 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl hover:border-primary/50">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-500/10 text-rose-600">
                     <Headset className="h-6 w-6"/>
                   </div>
