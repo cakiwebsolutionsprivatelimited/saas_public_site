@@ -2,14 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Container } from '../ui/Container';
-
-const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Apps', path: '/apps' },
-  { name: 'Pricing', path: '/pricing' },
-  { name: 'Industry Solutions', path: '/industries' },
-  { name: 'Request Demo', path: '/request-demo' },
-];
+import { MAIN_NAV, CTA_ROUTES, SITE_CONFIG } from '../../constants';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,13 +18,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex shrink-0 items-center">
             <Link to="/" className="text-xl font-bold tracking-tight text-foreground" onClick={closeMobileMenu}>
-              Company Name
+              {SITE_CONFIG.name}
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
+            {MAIN_NAV.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
@@ -49,16 +42,16 @@ export default function Header() {
           {/* Desktop Right Side */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              to="/login"
+              to={CTA_ROUTES.login}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
-              Login
+              {SITE_CONFIG.secondaryCTA}
             </Link>
             <Link
-              to="/request-demo"
+              to={CTA_ROUTES.requestDemo}
               className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             >
-              Request Demo
+              {SITE_CONFIG.primaryCTA}
             </Link>
           </div>
 
@@ -87,7 +80,7 @@ export default function Header() {
         <div className="md:hidden border-t bg-background" id="mobile-menu">
           <Container>
             <div className="space-y-1 pb-3 pt-2">
-              {navItems.map((item) => (
+              {MAIN_NAV.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
@@ -105,18 +98,18 @@ export default function Header() {
             <div className="border-t pb-4 pt-4">
               <div className="flex flex-col gap-3 px-3">
                 <Link
-                  to="/login"
+                  to={CTA_ROUTES.login}
                   onClick={closeMobileMenu}
                   className="block text-base font-medium text-muted-foreground hover:text-foreground"
                 >
-                  Login
+                  {SITE_CONFIG.secondaryCTA}
                 </Link>
                 <Link
-                  to="/request-demo"
+                  to={CTA_ROUTES.requestDemo}
                   onClick={closeMobileMenu}
                   className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-base font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                 >
-                  Request Demo
+                  {SITE_CONFIG.primaryCTA}
                 </Link>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContainerProps } from '../../types/design-system';
+import type { ContainerProps } from '../../types/design-system';
 
 export function Container({ children, className = '' }: ContainerProps) {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeadingProps } from '../../types/design-system';
+import type { SectionHeadingProps } from '../../types/design-system';
 
 export function SectionHeading({ title, subtitle, align = 'center', className = '' }: SectionHeadingProps) {
   const alignmentClass = align === 'center' ? 'text-center mx-auto' : 'text-left';
