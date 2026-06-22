@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Container } from '../ui/Container';
 import { SITE_CONFIG, FOOTER_NAV, CTA_ROUTES } from '../../constants';
+import logo from '../../assets/newlogo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,8 +17,11 @@ export default function Footer() {
           
           {/* Column 1: Brand & Description */}
           <div className="flex flex-col space-y-4">
-            <Link to="/" className="text-2xl font-bold tracking-tight text-foreground">
-              {SITE_CONFIG.name}
+            <Link to="/" className="flex items-center gap-2">
+              <img src={logo} alt={SITE_CONFIG.name} className="h-8 w-auto" />
+              <span className="text-2xl font-bold tracking-tight text-foreground">
+                {SITE_CONFIG.name}
+              </span>
             </Link>
             <p className="text-sm text-muted-foreground font-medium">
               {SITE_CONFIG.tagline}

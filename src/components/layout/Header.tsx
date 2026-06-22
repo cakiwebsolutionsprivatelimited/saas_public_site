@@ -3,6 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { MAIN_NAV, CTA_ROUTES, SITE_CONFIG } from '../../constants';
+import logo from '../../assets/newlogo.png';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,8 +18,11 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex shrink-0 items-center">
-            <Link to="/" className="text-xl font-bold tracking-tight text-foreground" onClick={closeMobileMenu}>
-              {SITE_CONFIG.name}
+            <Link to="/" className="flex items-center gap-2" onClick={closeMobileMenu}>
+              <img src={logo} alt={SITE_CONFIG.name} className="h-8 w-auto" />
+              <span className="text-xl font-bold tracking-tight text-foreground">
+                {SITE_CONFIG.name}
+              </span>
             </Link>
           </div>
 
