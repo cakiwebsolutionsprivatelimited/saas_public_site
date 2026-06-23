@@ -80,17 +80,17 @@ export default function IndustrySolutionsSection() {
   const ActiveIcon = activeIndustry.icon;
 
   return (
-    <Section className="bg-white border-t border-zinc-200 overflow-hidden py-24">
+    <Section className="bg-white border-t border-warm-sage overflow-hidden py-24">
       <Container>
         {/* Section Header */}
         <div className="mb-12 lg:mb-16">
-          <div className="inline-flex items-center rounded-full bg-zinc-100 px-4 py-1.5 font-heading text-sm font-bold text-zinc-600 ring-1 ring-inset ring-zinc-200 mb-6">
+          <div className="inline-flex items-center rounded-full bg-warm-sand px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-6">
             Industry Solutions
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl md:text-5xl mb-6 leading-[1.1] max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl md:text-5xl mb-6 leading-[1.1] max-w-3xl">
             Built for Businesses Across Industries
           </h2>
-          <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl">
+          <p className="text-lg text-stone-600 leading-relaxed max-w-2xl">
             Purpose-built solutions for different business types, all powered by the same connected platform.
           </p>
         </div>
@@ -99,29 +99,29 @@ export default function IndustrySolutionsSection() {
           
           {/* Left Column: Featured Panel */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-             <div className="group relative flex flex-col rounded-[2.5rem] bg-white ring-1 ring-zinc-200 p-8 sm:p-10 shadow-sm overflow-hidden transition-all duration-500">
+             <div className="group relative flex flex-col rounded-[2.5rem] bg-white ring-1 ring-warm-sage p-8 sm:p-10 shadow-sm overflow-hidden transition-all duration-500">
                
                <div key={activeIndustry.id} className="relative z-10 flex flex-col h-full animate-in fade-in slide-in-from-bottom-2 duration-500">
                  <div className="mb-8">
-                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-zinc-100 text-indigo-600 ring-1 ring-inset ring-zinc-200 mb-6 shadow-sm">
+                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-warm-sand text-indigo-600 ring-1 ring-inset ring-warm-sage mb-6 shadow-sm">
                      <ActiveIcon className="h-8 w-8" strokeWidth={1.5} />
                    </div>
-                   <h3 className="text-3xl font-bold text-zinc-900 mb-4">
+                   <h3 className="text-3xl font-bold text-stone-900 mb-4">
                      {activeIndustry.name}
                    </h3>
-                   <p className="text-zinc-600 text-lg leading-relaxed mb-8">
+                   <p className="text-stone-600 text-lg leading-relaxed mb-8">
                      {activeIndustry.description}
                    </p>
                  </div>
 
                  <div className="mb-10 flex-grow">
-                   <p className="text-zinc-500 text-sm font-bold uppercase tracking-wider mb-5">
+                   <p className="text-stone-500 text-sm font-bold uppercase tracking-wider mb-5">
                      Manage:
                    </p>
                    <ul className="space-y-4">
                      {activeIndustry.useCases.map((useCase, idx) => (
-                       <li key={idx} className="flex items-center gap-3 text-zinc-700 font-medium">
-                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-100">
+                       <li key={idx} className="flex items-center gap-3 text-stone-700 font-medium">
+                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-warm-sand">
                            <CheckCircle2 className="h-4 w-4 text-indigo-600" />
                          </div>
                          <span>{useCase}</span>
@@ -153,21 +153,21 @@ export default function IndustrySolutionsSection() {
                     onClick={() => setActiveIndex(idx)}
                     className={`group relative flex items-center justify-between rounded-2xl p-4 text-left transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ${
                       isActive 
-                        ? 'bg-zinc-50 ring-1 ring-zinc-300 shadow-sm' 
-                        : 'bg-white ring-1 ring-zinc-200 hover:ring-1 hover:ring-zinc-300 hover:bg-zinc-50 shadow-sm'
+                        ? 'bg-warm-cream ring-1 ring-stone-300 shadow-sm' 
+                        : 'bg-white ring-1 ring-warm-sage hover:ring-1 hover:ring-stone-300 hover:bg-warm-cream shadow-sm'
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-200 bg-zinc-100 ${
+                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-200 bg-warm-sand ${
                         isActive 
                           ? 'text-indigo-600 shadow-sm scale-105' 
-                          : 'text-zinc-500 group-hover:text-indigo-600'
+                          : 'text-stone-500 group-hover:text-indigo-600'
                       }`}>
                         <Icon className="h-6 w-6" strokeWidth={1.5} />
                       </div>
                       <div>
                         <h4 className={`text-base font-bold transition-colors ${
-                          isActive ? 'text-zinc-900' : 'text-zinc-600 group-hover:text-zinc-900'
+                          isActive ? 'text-stone-900' : 'text-stone-600 group-hover:text-stone-900'
                         }`}>
                           {ind.name}
                         </h4>
@@ -176,7 +176,7 @@ export default function IndustrySolutionsSection() {
                     <ChevronRight className={`h-5 w-5 shrink-0 transition-transform ${
                       isActive 
                         ? 'text-indigo-600 translate-x-0 opacity-100' 
-                        : 'text-zinc-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-indigo-400'
+                        : 'text-stone-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-indigo-400'
                     }`} />
                   </button>
                 );
