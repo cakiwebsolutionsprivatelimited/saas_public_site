@@ -21,32 +21,35 @@ export default function Apps() {
   const workflows = [
     {
       title: 'Lead to Cash',
-      outcome: 'Turn leads into revenue.',
-      description: 'Manage the entire customer lifecycle from lead capture to payment collection.',
+      outcome: 'Turn leads into revenue faster.',
+      description: 'A complete workflow from first enquiry to final payment. Connect your sales and finance teams to eliminate manual data entry.',
       apps: [
-        { id: 'crm', label: 'Capture Leads' },
-        { id: 'sales', label: 'Create Quotations' },
-        { id: 'billing', label: 'Generate Invoices' },
-        { id: 'inventory', label: 'Fulfil Orders' },
-        { id: 'accounts', label: 'Track Revenue' }
+        { id: 'crm', label: 'Customer Enquiry' },
+        { id: 'sales', label: 'Quotation' },
+        { id: 'billing', label: 'Invoice' },
+        { id: 'inventory', label: 'Delivery' },
+        { id: 'accounts', label: 'Payment' }
       ]
     },
     {
       title: 'Hire to Retire',
-      outcome: 'Manage employees from onboarding to payroll.',
-      description: 'Create a consistent employee management process.',
+      outcome: 'Build a high-performing workforce.',
+      description: 'A unified process from recruitment to offboarding. Streamline the employee journey and ensure accurate payroll.',
       apps: [
-        { id: 'hrms', label: 'Manage Employees' },
-        { id: 'payroll', label: 'Run Payroll' }
+        { id: 'hrms', label: 'Recruitment' },
+        { id: 'hrms', label: 'Onboarding' },
+        { id: 'hrms', label: 'Management' },
+        { id: 'payroll', label: 'Payroll' }
       ]
     },
     {
       title: 'Service Delivery',
-      outcome: 'Deliver projects and support customers efficiently.',
-      description: 'Plan work, deliver services, and provide ongoing support.',
+      outcome: 'Deliver projects on time and on budget.',
+      description: 'A complete workflow from project kickoff to client support. Coordinate teams and resolve issues from a single system.',
       apps: [
-        { id: 'projects', label: 'Plan & Execute' },
-        { id: 'helpdesk', label: 'Support Customers' }
+        { id: 'projects', label: 'Project Planning' },
+        { id: 'projects', label: 'Task Execution' },
+        { id: 'helpdesk', label: 'Client Support' }
       ]
     }
   ];
@@ -60,14 +63,14 @@ export default function Apps() {
           <div className="mx-auto max-w-4xl text-center mb-16">
             <div className="inline-flex items-center rounded-full border border-warm-sage bg-white px-4 py-1.5 text-sm font-bold text-stone-600 shadow-sm mb-8">
               <span className="mr-2 flex h-2 w-2 rounded-full bg-indigo-600"></span>
-              The Complete Application Suite
+              One Platform For Everything
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-7xl mb-8 leading-[1.1]">
-              A Complete Business <br className="hidden md:block"/>
-              <span className="text-indigo-600">Operating System.</span>
+              Connect Every Department. <br className="hidden md:block"/>
+              <span className="text-indigo-600">Eliminate Operational Chaos.</span>
             </h1>
             <p className="mx-auto max-w-2xl text-xl text-stone-600 font-medium leading-relaxed">
-              Start with the specific modules you need today. Seamlessly expand into a fully connected platform as your business grows.
+              Run your entire business from a single, connected platform. Gain complete visibility, improve operational efficiency, and accelerate growth without the friction of disconnected systems.
             </p>
           </div>
 
@@ -115,10 +118,10 @@ export default function Apps() {
         <Container>
           <div className="max-w-3xl mb-24">
             <h2 className="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6 leading-tight">
-              Purpose-built for <br />every department.
+              Solve Real Business <br />Challenges.
             </h2>
             <p className="text-xl text-stone-600 font-medium leading-relaxed">
-              Explore our comprehensive suite of applications. Each module is powerful on its own, but transformative when connected together.
+              Every department connected. Every process streamlined. Achieve your business outcomes faster with a platform that breaks down operational silos.
             </p>
           </div>
 
@@ -134,18 +137,25 @@ export default function Apps() {
                   {/* Storytelling Side (60% visually) */}
                   <div className={`lg:w-1/2 ${isEven ? 'lg:pr-12' : 'lg:order-last lg:pl-12'}`}>
                     <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-bold text-indigo-600 mb-8 border border-indigo-100">
-                      {category.name}
+                      Business Outcome
                     </div>
                     <h3 className="text-3xl lg:text-4xl font-extrabold text-stone-900 mb-6 leading-tight">
-                      {category.id === 'sales-crm' && 'Turn leads into loyal customers, faster.'}
-                      {category.id === 'finance' && 'Complete visibility into your financial health.'}
-                      {category.id === 'operations' && 'Streamline your core business operations.'}
-                      {category.id === 'people' && 'Empower your workforce from day one.'}
-                      {category.id === 'growth' && 'Scale your brand and online presence.'}
+                      {category.id === 'sales-crm' && 'Convert More Leads Into Customers'}
+                      {category.id === 'finance' && 'Get Complete Financial Visibility'}
+                      {category.id === 'operations' && 'Eliminate Operational Bottlenecks'}
+                      {category.id === 'people' && 'Build a High-Performing Team'}
+                      {category.id === 'growth' && 'Accelerate Market Growth'}
                     </h3>
-                    <p className="text-lg text-stone-600 mb-10 font-medium leading-relaxed">
-                      {category.description} Built specifically for modern enterprises looking to break down data silos and empower their {category.name.toLowerCase()} teams.
+                    <p className="text-lg text-stone-600 mb-6 font-medium leading-relaxed">
+                      {category.id === 'sales-crm' && 'Unify your sales pipeline, close deals faster, and build stronger customer relationships.'}
+                      {category.id === 'finance' && 'Take control of your cash flow, automate billing processes, and ensure accurate accounting.'}
+                      {category.id === 'operations' && 'Connect inventory, projects, and support to deliver consistently on your promises.'}
+                      {category.id === 'people' && 'Manage the entire employee lifecycle smoothly from recruitment through to payroll.'}
+                      {category.id === 'growth' && 'Expand your reach, engage audiences, and drive revenue with integrated commerce tools.'}
                     </p>
+                    <div className="text-sm font-bold text-stone-500 uppercase tracking-widest mb-4">
+                      Supported By {category.name}
+                    </div>
                     <ul className="space-y-5">
                       {categoryApps.slice(0, 3).map(app => (
                         <li key={app.id} className="flex items-start">
@@ -268,35 +278,35 @@ export default function Apps() {
         <Container>
           <div className="mx-auto max-w-5xl text-center">
             <h2 className="text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-7xl mb-8 leading-[1.1]">
-              Start With One App.<br />
-              <span className="text-indigo-600">Grow Into One Platform.</span>
+              See How Your Business Can <br />
+              <span className="text-indigo-600">Run From One Platform.</span>
             </h2>
             
             <p className="mx-auto max-w-2xl text-xl text-stone-600 mb-20 font-medium leading-relaxed">
-              Begin with the exact tools you need today. As your business evolves, seamlessly unlock new capabilities without the pain of migrating to a new system.
+              Stop switching between disconnected systems. Connect every department, reduce manual data entry, improve operational visibility, and build a solid foundation for growth.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 text-left border-y border-warm-sage py-16">
               <div>
                 <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
-                  <TrendingUp className="h-6 w-6" />
-                </div>
-                <h4 className="text-xl font-bold text-stone-900 mb-3">Start Small</h4>
-                <p className="text-stone-600 font-medium leading-relaxed">Adopt only what you need to solve today's challenges. Keep costs low and adoption high.</p>
-              </div>
-              <div>
-                <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
                   <Layers className="h-6 w-6" />
                 </div>
-                <h4 className="text-xl font-bold text-stone-900 mb-3">Grow Without Limits</h4>
-                <p className="text-stone-600 font-medium leading-relaxed">Add new modules with a single click. Everything works immediately because it shares the same core.</p>
+                <h4 className="text-xl font-bold text-stone-900 mb-3">Eliminate Disconnected Systems</h4>
+                <p className="text-stone-600 font-medium leading-relaxed">Replace your messy web of standalone applications with one unified platform built for business.</p>
               </div>
               <div>
                 <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
                   <Activity className="h-6 w-6" />
                 </div>
-                <h4 className="text-xl font-bold text-stone-900 mb-3">One Unified Source</h4>
-                <p className="text-stone-600 font-medium leading-relaxed">A single source of truth for all your data. No more syncing errors, API limits, or data silos.</p>
+                <h4 className="text-xl font-bold text-stone-900 mb-3">Reduce Manual Work</h4>
+                <p className="text-stone-600 font-medium leading-relaxed">Automate data transfer across departments. If it happens in sales, finance knows instantly.</p>
+              </div>
+              <div>
+                <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
+                  <TrendingUp className="h-6 w-6" />
+                </div>
+                <h4 className="text-xl font-bold text-stone-900 mb-3">Support Business Growth</h4>
+                <p className="text-stone-600 font-medium leading-relaxed">Make faster, better decisions with real-time visibility into every corner of your operations.</p>
               </div>
             </div>
             
