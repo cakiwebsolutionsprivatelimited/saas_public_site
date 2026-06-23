@@ -16,7 +16,7 @@ export default function Footer() {
       <Container>
         
         {/* Mini CTA Area */}
-        <div className="mb-24 flex flex-col items-center justify-between gap-8 rounded-[2rem] bg-warm-cream ring-1 ring-warm-sage px-8 py-12 text-center md:flex-row md:px-16 md:py-16 md:text-left shadow-sm overflow-hidden relative">
+        <div className="mb-16 flex flex-col items-center justify-between gap-8 rounded-[2rem] bg-warm-cream ring-1 ring-warm-sage px-8 py-12 text-center md:flex-row md:px-16 md:py-12 md:text-left shadow-sm overflow-hidden relative">
           
           <div className="relative z-10 max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl leading-tight">
@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="relative z-10">
             <Link
               to={CTA_ROUTES.requestDemo}
-              className="group shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-base font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="group shrink-0 inline-flex items-center justify-center gap-2 rounded-md bg-indigo-600 px-8 py-4 text-base font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Request Demo
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-8">
           
           {/* Column 1: Brand & Description */}
           <div className="flex flex-col space-y-6 lg:col-span-2 pr-8">

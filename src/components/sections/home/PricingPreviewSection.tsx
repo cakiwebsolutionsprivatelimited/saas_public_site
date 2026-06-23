@@ -52,11 +52,11 @@ const plans = [
 
 export default function PricingPreviewSection() {
   return (
-    <Section className="bg-warm-sand border-t border-warm-sage overflow-hidden py-24">
+    <Section className="bg-warm-sand border-t border-warm-sage overflow-hidden py-16">
       <Container>
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
-          <div className="inline-flex items-center rounded-full bg-warm-cream px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-16">
+          <div className="inline-flex items-center rounded-md bg-warm-cream px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-6">
             Simple Pricing
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl md:text-5xl mb-6 leading-[1.1]">
@@ -72,14 +72,14 @@ export default function PricingPreviewSection() {
           {plans.map((plan) => (
             <div 
               key={plan.name}
-              className={`relative flex flex-col rounded-3xl p-8 transition-all duration-300 ${
+              className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 ${
                 plan.popular 
                   ? 'bg-white ring-1 ring-stone-300 shadow-md z-10 lg:scale-105' 
                   : 'bg-white ring-1 ring-warm-sage shadow-sm lg:hover:scale-[1.02]'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-0 right-0 mx-auto w-32 rounded-full bg-stone-900 px-3 py-1.5 text-center text-xs font-bold uppercase tracking-wide text-white shadow-sm">
+                <div className="absolute -top-4 left-0 right-0 mx-auto w-32 rounded-md bg-stone-900 px-3 py-1.5 text-center text-xs font-bold uppercase tracking-wide text-white shadow-sm">
                   Most Popular
                 </div>
               )}
@@ -107,7 +107,7 @@ export default function PricingPreviewSection() {
               {/* CTA Button */}
               <a
                 href={`#${plan.name.toLowerCase()}`}
-                className={`mt-auto mb-8 block w-full rounded-xl px-4 py-3.5 text-center text-sm font-bold transition-all focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ${plan.ctaStyle}`}
+                className={`mt-auto mb-8 block w-full rounded-md px-4 py-3.5 text-center text-sm font-bold transition-all focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 ${plan.ctaStyle}`}
               >
                 {plan.ctaText}
               </a>

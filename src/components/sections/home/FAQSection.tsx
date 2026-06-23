@@ -38,11 +38,11 @@ export default function FAQSection() {
   };
 
   return (
-    <Section className="bg-white py-24 sm:py-32 border-t border-slate-100">
+    <Section className="bg-white py-16 sm:py-20 border-t border-slate-100">
       <Container>
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
-          <div className="inline-flex items-center rounded-full bg-slate-100 px-4 py-1.5 font-heading text-sm font-bold text-slate-800 ring-1 ring-inset ring-slate-200/50 mb-6 shadow-sm">
+        <div className="mx-auto max-w-3xl text-center mb-16 lg:mb-16">
+          <div className="inline-flex items-center rounded-md bg-slate-100 px-4 py-1.5 font-heading text-sm font-bold text-slate-800 ring-1 ring-inset ring-slate-200/50 mb-6 shadow-sm">
             Frequently Asked Questions
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl mb-6">

@@ -77,11 +77,11 @@ const CATEGORIES = [
 
 export default function FeaturedAppsSection() {
   return (
-    <Section className="bg-slate-50 py-24 sm:py-32">
+    <Section className="bg-slate-50 py-16 sm:py-20">
       <Container>
         {/* Section Header */}
-        <div className="text-center mx-auto mb-16 lg:mb-24 max-w-3xl">
-          <div className="inline-flex items-center rounded-full bg-indigo-100/80 px-4 py-1.5 font-heading text-sm font-bold text-indigo-800 ring-1 ring-inset ring-indigo-600/20 mb-6">
+        <div className="text-center mx-auto mb-16 lg:mb-16 max-w-3xl">
+          <div className="inline-flex items-center rounded-md bg-indigo-100/80 px-4 py-1.5 font-heading text-sm font-bold text-indigo-800 ring-1 ring-inset ring-indigo-600/20 mb-6">
             App Ecosystem
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl mb-6">
@@ -105,7 +105,7 @@ export default function FeaturedAppsSection() {
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ${category.color}`}>
+                  <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-lg ${category.color}`}>
                     <CategoryIcon className="h-7 w-7" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900">
@@ -124,9 +124,9 @@ export default function FeaturedAppsSection() {
                       <a 
                         key={app.id}
                         href={`/apps/${app.id}`}
-                        className="group flex items-start gap-4 rounded-2xl p-4 transition-all hover:bg-slate-50 border border-transparent hover:border-slate-200 hover:shadow-sm"
+                        className="group flex items-start gap-4 rounded-lg p-4 transition-all hover:bg-slate-50 border border-transparent hover:border-slate-200 hover:shadow-sm"
                       >
-                        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110 shadow-sm ${Theme.classes}`}>
+                        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-md transition-transform duration-300 group-hover:scale-110 shadow-sm ${Theme.classes}`}>
                           <AppIcon className="h-6 w-6" strokeWidth={1.5} />
                         </div>
                         <div className="flex-grow pt-0.5">
@@ -135,7 +135,7 @@ export default function FeaturedAppsSection() {
                               {app.name}
                             </h4>
                             {app.badge && (
-                              <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600 ring-1 ring-inset ring-slate-200">
+                              <span className="inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-600 ring-1 ring-inset ring-slate-200">
                                 {app.badge}
                               </span>
                             )}

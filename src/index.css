@@ -73,7 +73,7 @@
     --chart-3: oklch(0.439 0 0);
     --chart-4: oklch(0.371 0 0);
     --chart-5: oklch(0.269 0 0);
-    --radius: 0.5rem; /* Slightly crisper radius */
+    --radius: 0.3rem; /* Crisper radius */
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
     --sidebar-primary: oklch(0.45 0.16 270);
@@ -141,10 +141,10 @@
 
 @layer utilities {
   .section-spacing {
-    @apply py-16 sm:py-24 lg:py-32;
+    @apply py-12 sm:py-16 lg:py-20;
   }
   .content-spacing {
-    @apply gap-8 sm:gap-12 lg:gap-16;
+    @apply gap-8 sm:gap-8 lg:gap-12;
   }
   .container-spacing {
     @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl w-full;

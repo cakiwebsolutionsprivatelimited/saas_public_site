@@ -74,7 +74,7 @@ export default function Header() {
             </Link>
             <Link
               to={CTA_ROUTES.requestDemo}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
             >
               {SITE_CONFIG.primaryCTA}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -85,7 +85,7 @@ export default function Header() {
           <div className="flex items-center md:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-xl p-2.5 text-slate-600 hover:bg-slate-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
+              className="inline-flex items-center justify-center rounded-md p-2.5 text-slate-600 hover:bg-slate-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -116,7 +116,7 @@ export default function Header() {
                 to={item.path}
                 onClick={closeMobileMenu}
                 className={({ isActive }) =>
-                  `block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                  `block rounded-md px-4 py-3 text-base font-bold transition-colors ${
                     isActive 
                       ? 'bg-indigo-50 text-indigo-700' 
                       : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
@@ -132,14 +132,14 @@ export default function Header() {
               <Link
                 to={CTA_ROUTES.login}
                 onClick={closeMobileMenu}
-                className="block w-full rounded-xl px-4 py-3 text-center text-base font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                className="block w-full rounded-md px-4 py-3 text-center text-base font-bold text-slate-700 hover:bg-slate-50 transition-colors"
               >
                 {SITE_CONFIG.secondaryCTA}
               </Link>
               <Link
                 to={CTA_ROUTES.requestDemo}
                 onClick={closeMobileMenu}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-3.5 text-base font-bold text-white shadow-sm transition-all hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-indigo-600 px-4 py-3.5 text-base font-bold text-white shadow-sm transition-all hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
               >
                 {SITE_CONFIG.primaryCTA}
                 <ArrowRight className="h-5 w-5" />

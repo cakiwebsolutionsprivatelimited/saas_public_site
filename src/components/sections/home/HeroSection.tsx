@@ -20,14 +20,14 @@ export default function HeroSection() {
   return (
     <Section className="relative overflow-hidden bg-white">
       <Container>
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           
           {/* Left Column: Content */}
           <div className="flex flex-col space-y-8">
             <div className="space-y-6">
               
               {/* Badge */}
-              <div className="inline-flex w-fit items-center rounded-full border border-warm-sage bg-warm-cream px-4 py-1.5 text-sm font-semibold text-stone-700 shadow-sm">
+              <div className="inline-flex w-fit items-center rounded-md border border-warm-sage bg-warm-cream px-4 py-1.5 text-sm font-semibold text-stone-700 shadow-sm">
                 <span className="mr-2 flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
                 The Business Operating System
               </div>
@@ -83,29 +83,29 @@ export default function HeroSection() {
             {/* Mobile Ecosystem View (< lg) */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:hidden">
                {/* Core Card */}
-               <div className="col-span-2 sm:col-span-3 flex flex-col items-center justify-center p-6 rounded-xl border border-warm-sage bg-warm-cream shadow-sm">
+               <div className="col-span-2 sm:col-span-3 flex flex-col items-center justify-center p-6 rounded-md border border-warm-sage bg-warm-cream shadow-sm">
                  <Layers className="h-10 w-10 text-indigo-600 mb-3" />
                  <span className="font-bold text-xl text-stone-900">{SITE_CONFIG.name} Core</span>
                  <span className="text-sm text-stone-500">Centralized Database</span>
                </div>
                
                {/* App Cards */}
-               <div className="flex items-center gap-2 rounded-xl border border-warm-sage bg-white p-3 shadow-sm">
+               <div className="flex items-center gap-2 rounded-md border border-warm-sage bg-white p-3 shadow-sm">
                  <Users className="h-5 w-5 text-blue-600"/> <span className="font-semibold text-sm text-stone-700">CRM</span>
                </div>
-               <div className="flex items-center gap-2 rounded-xl border border-warm-sage bg-white p-3 shadow-sm">
+               <div className="flex items-center gap-2 rounded-md border border-warm-sage bg-white p-3 shadow-sm">
                  <Receipt className="h-5 w-5 text-emerald-600"/> <span className="font-semibold text-sm text-stone-700">Billing</span>
                </div>
-               <div className="flex items-center gap-2 rounded-xl border border-warm-sage bg-white p-3 shadow-sm">
+               <div className="flex items-center gap-2 rounded-md border border-warm-sage bg-white p-3 shadow-sm">
                  <Package className="h-5 w-5 text-orange-600"/> <span className="font-semibold text-sm text-stone-700">Inventory</span>
                </div>
-               <div className="flex items-center gap-2 rounded-xl border border-warm-sage bg-white p-3 shadow-sm">
+               <div className="flex items-center gap-2 rounded-md border border-warm-sage bg-white p-3 shadow-sm">
                  <Briefcase className="h-5 w-5 text-purple-600"/> <span className="font-semibold text-sm text-stone-700">HRMS</span>
                </div>
-               <div className="flex items-center gap-2 rounded-xl border border-warm-sage bg-white p-3 shadow-sm">
+               <div className="flex items-center gap-2 rounded-md border border-warm-sage bg-white p-3 shadow-sm">
                  <LayoutList className="h-5 w-5 text-indigo-600"/> <span className="font-semibold text-sm text-stone-700">Projects</span>
                </div>
-               <div className="flex items-center gap-2 rounded-xl border border-warm-sage bg-white p-3 shadow-sm">
+               <div className="flex items-center gap-2 rounded-md border border-warm-sage bg-white p-3 shadow-sm">
                  <Headset className="h-5 w-5 text-rose-600"/> <span className="font-semibold text-sm text-stone-700">Helpdesk</span>
                </div>
             </div>
@@ -114,7 +114,7 @@ export default function HeroSection() {
             <div className="hidden lg:flex relative w-full h-[600px] items-center justify-center">
                
                {/* Center Core */}
-               <div className="relative z-20 flex flex-col items-center justify-center w-48 h-48 rounded-2xl border border-warm-sage bg-white shadow-md">
+               <div className="relative z-20 flex flex-col items-center justify-center w-48 h-48 rounded-lg border border-warm-sage bg-white shadow-md">
                   <Layers className="h-12 w-12 text-indigo-600 mb-4" />
                   <span className="font-extrabold text-2xl text-stone-900">{SITE_CONFIG.name}</span>
                   <span className="text-xs font-bold tracking-widest text-stone-500 uppercase mt-1">Core Platform</span>
@@ -123,8 +123,8 @@ export default function HeroSection() {
                {/* Orbiting App Cards */}
                
                {/* CRM */}
-               <div className="absolute top-[8%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-xl border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-sand text-blue-600">
+               <div className="absolute top-[8%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-blue-600">
                     <Users className="h-6 w-6"/>
                   </div>
                   <div>
@@ -134,8 +134,8 @@ export default function HeroSection() {
                </div>
                
                {/* Billing */}
-               <div className="absolute top-[12%] right-[2%] z-30 flex w-48 items-center gap-4 rounded-xl border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-sand text-emerald-600">
+               <div className="absolute top-[12%] right-[2%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-emerald-600">
                     <Receipt className="h-6 w-6"/>
                   </div>
                   <div>
@@ -145,8 +145,8 @@ export default function HeroSection() {
                </div>
 
                {/* Inventory */}
-               <div className="absolute top-[45%] left-0 z-30 flex w-48 items-center gap-4 rounded-xl border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-sand text-orange-600">
+               <div className="absolute top-[45%] left-0 z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-orange-600">
                     <Package className="h-6 w-6"/>
                   </div>
                   <div>
@@ -156,8 +156,8 @@ export default function HeroSection() {
                </div>
 
                {/* HRMS */}
-               <div className="absolute top-[45%] right-0 z-30 flex w-48 items-center gap-4 rounded-xl border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-sand text-purple-600">
+               <div className="absolute top-[45%] right-0 z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-purple-600">
                     <Briefcase className="h-6 w-6"/>
                   </div>
                   <div>
@@ -167,8 +167,8 @@ export default function HeroSection() {
                </div>
 
                {/* Projects */}
-               <div className="absolute bottom-[12%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-xl border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-sand text-indigo-600">
+               <div className="absolute bottom-[12%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-indigo-600">
                     <LayoutList className="h-6 w-6"/>
                   </div>
                   <div>
@@ -178,8 +178,8 @@ export default function HeroSection() {
                </div>
 
                {/* Helpdesk */}
-               <div className="absolute bottom-[8%] right-[8%] z-30 flex w-48 items-center gap-4 rounded-xl border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-warm-sand text-rose-600">
+               <div className="absolute bottom-[8%] right-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-rose-600">
                     <Headset className="h-6 w-6"/>
                   </div>
                   <div>
@@ -189,13 +189,13 @@ export default function HeroSection() {
                </div>
 
                {/* Marketing */}
-               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-xl border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
+               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-md border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
                   <Megaphone className="h-4 w-4 text-stone-400"/> 
                   <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">Marketing</span>
                </div>
 
                {/* Website */}
-               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-xl border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
+               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-md border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
                   <Globe className="h-4 w-4 text-stone-400"/> 
                   <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">Website</span>
                </div>

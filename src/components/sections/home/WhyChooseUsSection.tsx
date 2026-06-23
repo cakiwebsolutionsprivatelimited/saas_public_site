@@ -91,11 +91,11 @@ export default function WhyChooseUsSection() {
   return (
     <Section className="bg-white overflow-hidden border-t border-gray-100">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           {/* Left Column: Content */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
             <div>
-              <div className="inline-flex items-center rounded-full bg-slate-100/80 px-4 py-1.5 font-heading text-sm font-bold text-slate-800 ring-1 ring-inset ring-slate-600/20 mb-6">
+              <div className="inline-flex items-center rounded-md bg-slate-100/80 px-4 py-1.5 font-heading text-sm font-bold text-slate-800 ring-1 ring-inset ring-slate-600/20 mb-6">
                 Why Businesses Choose Us
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl mb-6 leading-[1.1]">
@@ -107,7 +107,7 @@ export default function WhyChooseUsSection() {
             </div>
             
             <div className="hidden lg:block pt-8">
-               <div className="p-8 bg-gradient-to-br from-slate-50 to-white rounded-3xl border border-slate-200/60 shadow-sm relative overflow-hidden">
+               <div className="p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200/60 shadow-sm relative overflow-hidden">
                  <div className="absolute top-0 right-0 p-6 opacity-5">
                    <ShieldCheck className="w-24 h-24" />
                  </div>
@@ -139,9 +139,9 @@ export default function WhyChooseUsSection() {
                   return (
                     <div 
                       key={benefit.title}
-                      className={`group relative flex flex-col rounded-3xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
+                      className={`group relative flex flex-col rounded-xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
                     >
-                      <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${benefit.bgColor} ${benefit.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
+                      <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg ${benefit.bgColor} ${benefit.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
                         <Icon className="h-7 w-7" strokeWidth={1.75} />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-slate-900 transition-colors">
@@ -165,9 +165,9 @@ export default function WhyChooseUsSection() {
                   return (
                     <div 
                       key={benefit.title}
-                      className={`group relative flex flex-col rounded-3xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
+                      className={`group relative flex flex-col rounded-xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
                     >
-                      <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${benefit.bgColor} ${benefit.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
+                      <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg ${benefit.bgColor} ${benefit.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
                         <Icon className="h-7 w-7" strokeWidth={1.75} />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-slate-900 transition-colors">

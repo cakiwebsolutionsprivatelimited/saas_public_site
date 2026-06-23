@@ -12,11 +12,11 @@ const trustIndicators = [
 
 export default function CTASection() {
   return (
-    <Section className="relative overflow-hidden bg-warm-cream py-24 sm:py-32 border-t border-warm-sage">
+    <Section className="relative overflow-hidden bg-warm-cream py-16 sm:py-20 border-t border-warm-sage">
       <Container className="relative z-10">
         <div className="mx-auto max-w-4xl text-center">
           
-          <div className="inline-flex items-center rounded-full bg-warm-sand px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-8">
+          <div className="inline-flex items-center rounded-md bg-warm-sand px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-8">
             Ready to Get Started?
           </div>
           
@@ -32,7 +32,7 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <a
               href="#request-demo"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-xl bg-indigo-600 px-8 py-4 text-base font-bold text-white hover:bg-indigo-500 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-warm-cream shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-md bg-indigo-600 px-8 py-4 text-base font-bold text-white hover:bg-indigo-500 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-warm-cream shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
               Request Demo
               <ArrowRight className="h-5 w-5" />
@@ -40,7 +40,7 @@ export default function CTASection() {
             
             <a
               href="#explore-apps"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-bold text-stone-900 hover:bg-warm-cream transition-all ring-1 ring-inset ring-warm-sage shadow-sm focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 focus:ring-offset-warm-cream"
+              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-md bg-white px-8 py-4 text-base font-bold text-stone-900 hover:bg-warm-cream transition-all ring-1 ring-inset ring-warm-sage shadow-sm focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 focus:ring-offset-warm-cream"
             >
               Explore Apps
             </a>

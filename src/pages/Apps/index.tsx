@@ -62,7 +62,7 @@ export default function Apps() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
         <Container className="relative z-10">
           <div className="mx-auto max-w-4xl text-center mb-16">
-            <div className="inline-flex items-center rounded-full border border-warm-sage bg-white px-4 py-1.5 text-sm font-bold text-stone-600 shadow-sm mb-8">
+            <div className="inline-flex items-center rounded-md border border-warm-sage bg-white px-4 py-1.5 text-sm font-bold text-stone-600 shadow-sm mb-8">
               <span className="mr-2 flex h-2 w-2 rounded-full bg-indigo-600"></span>
               One Platform For Everything
             </div>
@@ -76,12 +76,12 @@ export default function Apps() {
           </div>
 
           {/* Ecosystem UI Visualization */}
-          <div className="max-w-5xl mx-auto bg-white border border-warm-sage rounded-3xl p-8 md:p-12 shadow-sm mb-16 hidden sm:block relative">
+          <div className="max-w-5xl mx-auto bg-white border border-warm-sage rounded-xl p-8 md:p-12 shadow-sm mb-16 hidden sm:block relative">
              <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative z-10">
                {categories.map((cat, idx) => (
                  <React.Fragment key={cat.id}>
                    <div className="flex flex-col items-center group">
-                     <div className="h-20 w-20 rounded-2xl bg-white border border-warm-sage flex items-center justify-center text-indigo-600 mb-4 shadow-sm group-hover:border-indigo-400 group-hover:shadow-md group-hover:-translate-y-1 transition-all">
+                     <div className="h-20 w-20 rounded-lg bg-white border border-warm-sage flex items-center justify-center text-indigo-600 mb-4 shadow-sm group-hover:border-indigo-400 group-hover:shadow-md group-hover:-translate-y-1 transition-all">
                        {cat.id === 'sales-crm' && <Users className="h-8 w-8" />}
                        {cat.id === 'finance' && <TrendingUp className="h-8 w-8" />}
                        {cat.id === 'operations' && <Activity className="h-8 w-8" />}
@@ -105,7 +105,7 @@ export default function Apps() {
           <div className="flex justify-center">
             <Link
               to={CTA_ROUTES.requestDemo}
-              className="inline-flex h-14 items-center justify-center rounded-xl bg-indigo-600 px-10 text-lg font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream"
+              className="inline-flex h-14 items-center justify-center rounded-md bg-indigo-600 px-10 text-lg font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream"
             >
               Request Demo
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -115,9 +115,9 @@ export default function Apps() {
       </Section>
 
       {/* 1.5. The Business Argument */}
-      <Section className="bg-white border-t border-warm-sage py-24 lg:py-32">
+      <Section className="bg-white border-t border-warm-sage py-16 lg:py-20">
         <Container>
-          <div className="mx-auto max-w-4xl text-center mb-20 lg:mb-24">
+          <div className="mx-auto max-w-4xl text-center mb-12 lg:mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6 leading-tight">
               Why Businesses Replace Disconnected Systems
             </h2>
@@ -127,7 +127,7 @@ export default function Apps() {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-16 lg:gap-24 items-start">
+            <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-start">
               
               {/* Left Column: Problems */}
               <div className="flex-1 w-full">
@@ -199,9 +199,9 @@ export default function Apps() {
       </Section>
 
       {/* 2. Category-Driven Apps Directory (40% cards, 60% storytelling) */}
-      <Section className="bg-white py-24 lg:py-32">
+      <Section className="bg-white py-16 lg:py-20">
         <Container>
-          <div className="max-w-3xl mb-24">
+          <div className="max-w-3xl mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6 leading-tight">
               Solve Real Business <br />Challenges.
             </h2>
@@ -217,11 +217,11 @@ export default function Apps() {
               const isEven = index % 2 === 0;
 
               return (
-                <div key={category.id} className="flex flex-col lg:flex-row gap-16 items-center">
+                <div key={category.id} className="flex flex-col lg:flex-row gap-12 items-center">
                   
                   {/* Storytelling Side (60% visually) */}
                   <div className={`lg:w-1/2 ${isEven ? 'lg:pr-12' : 'lg:order-last lg:pl-12'}`}>
-                    <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-bold text-indigo-600 mb-8 border border-indigo-100">
+                    <div className="inline-flex items-center rounded-md bg-indigo-50 px-4 py-1.5 text-sm font-bold text-indigo-600 mb-8 border border-indigo-100">
                       Business Outcome
                     </div>
                     <h3 className="text-3xl lg:text-4xl font-extrabold text-stone-900 mb-6 leading-tight">
@@ -259,10 +259,10 @@ export default function Apps() {
                         return (
                           <div 
                             key={app.id}
-                            className="bg-white border border-warm-sage rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all group"
+                            className="bg-white border border-warm-sage rounded-lg p-6 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all group"
                           >
                             <div className="flex items-center mb-6">
-                              <div className="h-12 w-12 rounded-xl bg-warm-sand flex items-center justify-center text-indigo-600 mr-4 group-hover:-translate-y-1 transition-transform">
+                              <div className="h-12 w-12 rounded-md bg-warm-sand flex items-center justify-center text-indigo-600 mr-4 group-hover:-translate-y-1 transition-transform">
                                 {Icon && <Icon className="h-6 w-6" />}
                               </div>
                               <h4 className="text-xl font-bold text-stone-900">{app.name}</h4>
@@ -284,9 +284,9 @@ export default function Apps() {
       </Section>
 
       {/* 3. Workflows (Business Journeys) */}
-      <Section className="bg-warm-cream border-t border-warm-sage py-24 lg:py-32 overflow-hidden relative">
+      <Section className="bg-warm-cream border-t border-warm-sage py-16 lg:py-20 overflow-hidden relative">
         <Container>
-          <div className="max-w-4xl mb-24 text-center mx-auto">
+          <div className="max-w-4xl mb-16 text-center mx-auto">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-stone-900 mb-8 leading-tight">
               End-to-End Business Journeys
             </h2>
@@ -297,14 +297,14 @@ export default function Apps() {
           
           <div className="space-y-20 max-w-7xl mx-auto">
             {workflows.map((workflow, idx) => (
-              <div key={idx} className="bg-white border border-warm-sage rounded-3xl p-10 lg:p-16 shadow-sm hover:shadow-md transition-shadow flex flex-col lg:flex-row gap-16 items-center">
+              <div key={idx} className="bg-white border border-warm-sage rounded-xl p-10 lg:p-16 shadow-sm hover:shadow-md transition-shadow flex flex-col lg:flex-row gap-12 items-center">
                 
                 {/* 40% Content Side */}
                 <div className="w-full lg:w-[40%] flex flex-col justify-center">
                   <h3 className="text-4xl md:text-5xl font-extrabold text-stone-900 mb-8 leading-tight">
                     {workflow.title}
                   </h3>
-                  <div className="inline-block bg-indigo-50 border border-indigo-100 rounded-2xl p-5 mb-8">
+                  <div className="inline-block bg-indigo-50 border border-indigo-100 rounded-lg p-5 mb-8">
                     <span className="block text-sm font-bold text-indigo-600 uppercase tracking-widest mb-2">Business Outcome</span>
                     <span className="text-2xl font-bold text-stone-900">{workflow.outcome}</span>
                   </div>
@@ -314,7 +314,7 @@ export default function Apps() {
                 </div>
 
                 {/* 60% Flow Side */}
-                <div className="w-full lg:w-[60%] bg-warm-cream rounded-3xl border border-warm-sage p-8 lg:p-12 flex items-center justify-center">
+                <div className="w-full lg:w-[60%] bg-warm-cream rounded-xl border border-warm-sage p-8 lg:p-12 flex items-center justify-center">
                   <div className="flex flex-col md:flex-row items-start justify-between w-full relative">
                     {/* Desktop connector line */}
                     <div className="hidden md:block absolute top-10 left-12 right-12 h-1 bg-warm-sage z-0 rounded-full"></div>
@@ -326,7 +326,7 @@ export default function Apps() {
                       return (
                         <React.Fragment key={app.id}>
                           <div className="flex flex-col items-center relative z-10 flex-1 group mt-4 md:mt-0">
-                            <div className="h-20 w-20 rounded-2xl bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 shadow-sm mb-6 group-hover:border-indigo-600 group-hover:-translate-y-1 group-hover:shadow-md transition-all duration-300">
+                            <div className="h-20 w-20 rounded-lg bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 shadow-sm mb-6 group-hover:border-indigo-600 group-hover:-translate-y-1 group-hover:shadow-md transition-all duration-300">
                               {Icon && <Icon className="h-8 w-8" />}
                             </div>
                             <div className="flex flex-col items-center text-center px-2">
@@ -359,7 +359,7 @@ export default function Apps() {
       </Section>
 
       {/* 4. Final CTA */}
-      <Section className="bg-white border-t border-warm-sage py-32 lg:py-40">
+      <Section className="bg-white border-t border-warm-sage py-20 lg:py-24">
         <Container>
           <div className="mx-auto max-w-5xl text-center">
             <h2 className="text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-7xl mb-8 leading-[1.1]">
@@ -367,27 +367,27 @@ export default function Apps() {
               <span className="text-indigo-600">Run From One Platform.</span>
             </h2>
             
-            <p className="mx-auto max-w-2xl text-xl text-stone-600 mb-20 font-medium leading-relaxed">
+            <p className="mx-auto max-w-2xl text-xl text-stone-600 mb-12 font-medium leading-relaxed">
               Stop switching between disconnected systems. Connect every department, reduce manual data entry, improve operational visibility, and build a solid foundation for growth.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 text-left border-y border-warm-sage py-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-left border-y border-warm-sage py-12">
               <div>
-                <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
+                <div className="h-12 w-12 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
                   <Layers className="h-6 w-6" />
                 </div>
                 <h4 className="text-xl font-bold text-stone-900 mb-3">Eliminate Disconnected Systems</h4>
                 <p className="text-stone-600 font-medium leading-relaxed">Replace your messy web of standalone applications with one unified platform built for business.</p>
               </div>
               <div>
-                <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
+                <div className="h-12 w-12 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
                   <Activity className="h-6 w-6" />
                 </div>
                 <h4 className="text-xl font-bold text-stone-900 mb-3">Reduce Manual Work</h4>
                 <p className="text-stone-600 font-medium leading-relaxed">Automate data transfer across departments. If it happens in sales, finance knows instantly.</p>
               </div>
               <div>
-                <div className="h-12 w-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
+                <div className="h-12 w-12 rounded-md bg-indigo-50 flex items-center justify-center text-indigo-600 mb-6">
                   <TrendingUp className="h-6 w-6" />
                 </div>
                 <h4 className="text-xl font-bold text-stone-900 mb-3">Support Business Growth</h4>
@@ -397,7 +397,7 @@ export default function Apps() {
             
             <Link
               to={CTA_ROUTES.requestDemo}
-              className="inline-flex h-16 items-center justify-center rounded-xl bg-indigo-600 px-12 text-xl font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="inline-flex h-16 items-center justify-center rounded-md bg-indigo-600 px-12 text-xl font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Request a Demo
               <ArrowRight className="ml-3 h-6 w-6" />

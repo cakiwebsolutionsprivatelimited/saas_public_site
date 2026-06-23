@@ -80,11 +80,11 @@ export default function IndustrySolutionsSection() {
   const ActiveIcon = activeIndustry.icon;
 
   return (
-    <Section className="bg-white border-t border-warm-sage overflow-hidden py-24">
+    <Section className="bg-white border-t border-warm-sage overflow-hidden py-16">
       <Container>
         {/* Section Header */}
         <div className="mb-12 lg:mb-16">
-          <div className="inline-flex items-center rounded-full bg-warm-sand px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-6">
+          <div className="inline-flex items-center rounded-md bg-warm-sand px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-6">
             Industry Solutions
           </div>
           <h2 className="text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl md:text-5xl mb-6 leading-[1.1] max-w-3xl">
@@ -95,7 +95,7 @@ export default function IndustrySolutionsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           
           {/* Left Column: Featured Panel */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
@@ -103,7 +103,7 @@ export default function IndustrySolutionsSection() {
                
                <div key={activeIndustry.id} className="relative z-10 flex flex-col h-full animate-in fade-in slide-in-from-bottom-2 duration-500">
                  <div className="mb-8">
-                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-warm-sand text-indigo-600 ring-1 ring-inset ring-warm-sage mb-6 shadow-sm">
+                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-warm-sand text-indigo-600 ring-1 ring-inset ring-warm-sage mb-6 shadow-sm">
                      <ActiveIcon className="h-8 w-8" strokeWidth={1.5} />
                    </div>
                    <h3 className="text-3xl font-bold text-stone-900 mb-4">
@@ -132,7 +132,7 @@ export default function IndustrySolutionsSection() {
                  
                  <a 
                    href={`#${activeIndustry.id}`}
-                   className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-xl bg-indigo-600 px-6 py-4 text-sm font-bold text-white hover:bg-indigo-500 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-white shadow-sm"
+                   className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-md bg-indigo-600 px-6 py-4 text-sm font-bold text-white hover:bg-indigo-500 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-white shadow-sm"
                  >
                    Explore Solution <ArrowRight className="h-4 w-4" />
                  </a>
@@ -151,14 +151,14 @@ export default function IndustrySolutionsSection() {
                   <button 
                     key={ind.id}
                     onClick={() => setActiveIndex(idx)}
-                    className={`group relative flex items-center justify-between rounded-2xl p-4 text-left transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ${
+                    className={`group relative flex items-center justify-between rounded-lg p-4 text-left transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ${
                       isActive 
                         ? 'bg-warm-cream ring-1 ring-stone-300 shadow-sm' 
                         : 'bg-white ring-1 ring-warm-sage hover:ring-1 hover:ring-stone-300 hover:bg-warm-cream shadow-sm'
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-200 bg-warm-sand ${
+                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-md transition-all duration-200 bg-warm-sand ${
                         isActive 
                           ? 'text-indigo-600 shadow-sm scale-105' 
                           : 'text-stone-500 group-hover:text-indigo-600'
