@@ -14,7 +14,8 @@ import {
   Activity,
   Users,
   Briefcase,
-  LayoutGrid
+  LayoutGrid,
+  XCircle
 } from 'lucide-react';
 
 export default function Apps() {
@@ -109,6 +110,90 @@ export default function Apps() {
               Request Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+          </div>
+        </Container>
+      </Section>
+
+      {/* 1.5. The Business Argument */}
+      <Section className="bg-white border-t border-warm-sage py-24 lg:py-32">
+        <Container>
+          <div className="mx-auto max-w-4xl text-center mb-20 lg:mb-24">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-stone-900 mb-6 leading-tight">
+              Why Businesses Replace Disconnected Systems
+            </h2>
+            <p className="text-xl lg:text-2xl text-stone-600 font-medium leading-relaxed">
+              Most growing businesses struggle with disconnected software, duplicate data entry, and limited visibility across departments.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-16 lg:gap-24 items-start">
+              
+              {/* Left Column: Problems */}
+              <div className="flex-1 w-full">
+                <h3 className="text-2xl font-bold text-stone-900 mb-10 pb-4 border-b-2 border-stone-100">
+                  Common Challenges
+                </h3>
+                <ul className="space-y-6">
+                  <li className="flex items-start">
+                    <XCircle className="h-6 w-6 text-red-500 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-600 font-medium text-lg lg:text-xl">Data scattered across multiple tools</span>
+                  </li>
+                  <li className="flex items-start">
+                    <XCircle className="h-6 w-6 text-red-500 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-600 font-medium text-lg lg:text-xl">Re-entering the same information repeatedly</span>
+                  </li>
+                  <li className="flex items-start">
+                    <XCircle className="h-6 w-6 text-red-500 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-600 font-medium text-lg lg:text-xl">Lack of visibility between departments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <XCircle className="h-6 w-6 text-red-500 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-600 font-medium text-lg lg:text-xl">Manual reporting and reconciliation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <XCircle className="h-6 w-6 text-red-500 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-600 font-medium text-lg lg:text-xl">Operational bottlenecks</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right Column: Benefits */}
+              <div className="flex-1 w-full">
+                <h3 className="text-2xl font-bold text-indigo-900 mb-10 pb-4 border-b-2 border-indigo-100">
+                  Connected Platform Benefits
+                </h3>
+                <ul className="space-y-6">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-600 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-900 font-bold text-lg lg:text-xl">One source of truth</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-600 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-900 font-bold text-lg lg:text-xl">Shared data across departments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-600 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-900 font-bold text-lg lg:text-xl">Faster decision making</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-600 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-900 font-bold text-lg lg:text-xl">Reduced manual work</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-emerald-600 mr-5 shrink-0 mt-0.5" strokeWidth={2.5} />
+                    <span className="text-stone-900 font-bold text-lg lg:text-xl">Better operational visibility</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Bottom Message */}
+            <div className="mt-20 pt-16 border-t border-warm-sage text-center">
+              <p className="text-2xl lg:text-3xl text-stone-900 font-extrabold leading-tight">
+                When Sales, Finance, Operations, HR, and Support work from the same platform, businesses operate faster and with greater visibility.
+              </p>
+            </div>
           </div>
         </Container>
       </Section>
