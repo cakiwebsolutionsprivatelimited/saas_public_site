@@ -1,10 +1,10 @@
 import { Section } from '../../ui/Section';
 import { Container } from '../../ui/Container';
 import { Check, Users } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { staggerContainer, fadeUp } from '../../../utils/animations';
 
-const popularPlanVariant = {
+const popularPlanVariant: Variants = {
   hidden: { opacity: 0, scale: 0.95, y: 15 },
   visible: { 
     opacity: 1, 
