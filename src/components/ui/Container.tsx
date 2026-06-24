@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ContainerProps } from '../../types/design-system';
 
 export function Container({ children, className = '' }: ContainerProps) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import type { SectionProps } from '../../types/design-system';
 
 export function Section({ children, className = '' }: SectionProps) {

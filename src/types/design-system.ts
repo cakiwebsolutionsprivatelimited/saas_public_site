@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type Align = 'left' | 'center';
 
 export interface SectionHeadingProps {

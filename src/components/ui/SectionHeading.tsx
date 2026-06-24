@@ -1,4 +1,3 @@
-import React from 'react';
 import type { SectionHeadingProps } from '../../types/design-system';
 
 export function SectionHeading({ title, subtitle, align = 'center', className = '' }: SectionHeadingProps) {
