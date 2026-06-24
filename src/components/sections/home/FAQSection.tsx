@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Section } from '../../ui/Section';
 import { Container } from '../../ui/Container';
 import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
@@ -78,17 +79,21 @@ export default function FAQSection() {
                         }`}
                       />
                     </button>
-                    <div
-                      className={`grid transition-all duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] ${
-                        isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <p className="text-base text-slate-600 leading-relaxed pr-8 pb-6">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: [0.87, 0, 0.13, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-base text-slate-600 leading-relaxed pr-8 pb-6 pt-2">
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}
@@ -115,17 +120,21 @@ export default function FAQSection() {
                         }`}
                       />
                     </button>
-                    <div
-                      className={`grid transition-all duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] ${
-                        isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <p className="text-base text-slate-600 leading-relaxed pr-8 pb-6">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: [0.87, 0, 0.13, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-base text-slate-600 leading-relaxed pr-8 pb-6 pt-2">
+                            {faq.answer}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               })}

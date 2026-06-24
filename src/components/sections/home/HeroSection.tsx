@@ -15,6 +15,8 @@ import {
   Megaphone, 
   Globe 
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeUp, floatAnimation } from '../../../utils/animations';
 
 export default function HeroSection() {
   return (
@@ -23,28 +25,34 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           
           {/* Left Column: Content */}
-          <div className="flex flex-col space-y-8">
+          <motion.div 
+            className="flex flex-col space-y-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+          >
             <div className="space-y-6">
               
               {/* Badge */}
-              <div className="inline-flex w-fit items-center rounded-md border border-warm-sage bg-warm-cream px-4 py-1.5 text-sm font-semibold text-stone-700 shadow-sm">
+              <motion.div variants={fadeUp} className="inline-flex w-fit items-center rounded-md border border-warm-sage bg-warm-cream px-4 py-1.5 text-sm font-semibold text-stone-700 shadow-sm">
                 <span className="mr-2 flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
                 The Business Operating System
-              </div>
+              </motion.div>
               
               {/* Headline */}
-              <h1 className="text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-6xl xl:text-[4rem] xl:leading-[1.1]">
+              <motion.h1 variants={fadeUp} className="text-4xl font-extrabold tracking-tight text-stone-900 sm:text-5xl lg:text-6xl xl:text-[4rem] xl:leading-[1.1]">
                 Connect every department on <span className="font-heading font-bold text-indigo-600">one scalable platform.</span>
-              </h1>
+              </motion.h1>
               
               {/* Description */}
-              <p className="text-lg text-stone-600 leading-relaxed sm:text-xl max-w-2xl font-medium">
+              <motion.p variants={fadeUp} className="text-lg text-stone-600 leading-relaxed sm:text-xl max-w-2xl font-medium">
                 Manage CRM, Billing, Inventory, HRMS, and Projects from a single unified ecosystem built for growing enterprises.
-              </p>
+              </motion.p>
             </div>
             
             {/* CTA Row */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4">
               <Link
                 to={CTA_ROUTES.requestDemo}
                 className="inline-flex h-14 items-center justify-center rounded-md bg-indigo-600 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
@@ -58,10 +66,10 @@ export default function HeroSection() {
                 Explore Apps
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-            </div>
+            </motion.div>
 
             {/* Trust Indicators */}
-            <div className="pt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-stone-500">
+            <motion.div variants={fadeUp} className="pt-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-stone-500">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-indigo-600" /> GST-ready
               </div>
@@ -74,8 +82,8 @@ export default function HeroSection() {
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-indigo-600" /> Role-based access
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column: Visual Ecosystem */}
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
@@ -123,7 +131,7 @@ export default function HeroSection() {
                {/* Orbiting App Cards */}
                
                {/* CRM */}
-               <div className="absolute top-[8%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+               <motion.div variants={floatAnimation(3.2)} animate="animate" className="absolute top-[8%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-colors hover:border-stone-300">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-blue-600">
                     <Users className="h-6 w-6"/>
                   </div>
@@ -131,10 +139,10 @@ export default function HeroSection() {
                     <div className="font-bold text-stone-900">CRM</div>
                     <div className="text-xs font-medium text-stone-500">Sales & Leads</div>
                   </div>
-               </div>
+               </motion.div>
                
                {/* Billing */}
-               <div className="absolute top-[12%] right-[2%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+               <motion.div variants={floatAnimation(2.8)} animate="animate" className="absolute top-[12%] right-[2%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-colors hover:border-stone-300">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-emerald-600">
                     <Receipt className="h-6 w-6"/>
                   </div>
@@ -142,10 +150,10 @@ export default function HeroSection() {
                     <div className="font-bold text-stone-900">Billing</div>
                     <div className="text-xs font-medium text-stone-500">Invoicing</div>
                   </div>
-               </div>
+               </motion.div>
 
                {/* Inventory */}
-               <div className="absolute top-[45%] left-0 z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+               <motion.div variants={floatAnimation(3.5)} animate="animate" className="absolute top-[45%] left-0 z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-colors hover:border-stone-300">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-orange-600">
                     <Package className="h-6 w-6"/>
                   </div>
@@ -153,10 +161,10 @@ export default function HeroSection() {
                     <div className="font-bold text-stone-900">Inventory</div>
                     <div className="text-xs font-medium text-stone-500">Stock Control</div>
                   </div>
-               </div>
+               </motion.div>
 
                {/* HRMS */}
-               <div className="absolute top-[45%] right-0 z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+               <motion.div variants={floatAnimation(3.1)} animate="animate" className="absolute top-[45%] right-0 z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-colors hover:border-stone-300">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-purple-600">
                     <Briefcase className="h-6 w-6"/>
                   </div>
@@ -164,10 +172,10 @@ export default function HeroSection() {
                     <div className="font-bold text-stone-900">HRMS</div>
                     <div className="text-xs font-medium text-stone-500">Employees</div>
                   </div>
-               </div>
+               </motion.div>
 
                {/* Projects */}
-               <div className="absolute bottom-[12%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+               <motion.div variants={floatAnimation(3.8)} animate="animate" className="absolute bottom-[12%] left-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-colors hover:border-stone-300">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-indigo-600">
                     <LayoutList className="h-6 w-6"/>
                   </div>
@@ -175,10 +183,10 @@ export default function HeroSection() {
                     <div className="font-bold text-stone-900">Projects</div>
                     <div className="text-xs font-medium text-stone-500">Tasks & Time</div>
                   </div>
-               </div>
+               </motion.div>
 
                {/* Helpdesk */}
-               <div className="absolute bottom-[8%] right-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-stone-300">
+               <motion.div variants={floatAnimation(2.9)} animate="animate" className="absolute bottom-[8%] right-[8%] z-30 flex w-48 items-center gap-4 rounded-md border border-warm-sage bg-white p-4 shadow-sm transition-colors hover:border-stone-300">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-warm-sand text-rose-600">
                     <Headset className="h-6 w-6"/>
                   </div>
@@ -186,19 +194,20 @@ export default function HeroSection() {
                     <div className="font-bold text-stone-900">Helpdesk</div>
                     <div className="text-xs font-medium text-stone-500">Support</div>
                   </div>
-               </div>
+               </motion.div>
 
                {/* Marketing */}
-               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-md border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
+               <motion.div variants={floatAnimation(4.1)} animate="animate" className="absolute top-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-md border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
                   <Megaphone className="h-4 w-4 text-stone-400"/> 
                   <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">Marketing</span>
-               </div>
+               </motion.div>
 
                {/* Website */}
-               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-md border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
+               {/* Website */}
+               <motion.div variants={floatAnimation(3.4)} animate="animate" className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-md border border-warm-sage bg-white/90 backdrop-blur-sm p-3 shadow-sm opacity-90">
                   <Globe className="h-4 w-4 text-stone-400"/> 
                   <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">Website</span>
-               </div>
+               </motion.div>
                
                {/* Abstract connecting lines to emphasize platform ecosystem */}
                <svg className="absolute inset-0 h-full w-full z-0 text-warm-sage" pointerEvents="none">

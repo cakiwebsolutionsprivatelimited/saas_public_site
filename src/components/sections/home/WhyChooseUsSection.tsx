@@ -10,6 +10,8 @@ import {
   BarChart3,
   Network
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeUp, slideInLeft } from '../../../utils/animations';
 
 const benefits = [
   {
@@ -92,8 +94,14 @@ export default function WhyChooseUsSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           {/* Left Column: Content */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32 space-y-8">
-            <div>
+          <motion.div 
+            className="lg:col-span-5 lg:sticky lg:top-32 space-y-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-10%" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeUp}>
               <div className="inline-flex items-center rounded-md bg-slate-100/80 px-4 py-1.5 font-heading text-sm font-bold text-slate-800 ring-1 ring-inset ring-slate-600/20 mb-6">
                 Why Businesses Choose Us
               </div>
@@ -103,9 +111,9 @@ export default function WhyChooseUsSection() {
               <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
                 Manage sales, billing, inventory, employees, projects, and customer operations from one connected platform.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="hidden lg:block pt-8">
+            <motion.div className="hidden lg:block pt-8" variants={slideInLeft}>
                <div className="p-8 bg-gradient-to-br from-slate-50 to-white rounded-xl border border-slate-200/60 shadow-sm relative overflow-hidden">
                  <div className="absolute top-0 right-0 p-6 opacity-5">
                    <ShieldCheck className="w-24 h-24" />
@@ -125,20 +133,27 @@ export default function WhyChooseUsSection() {
                    </div>
                  </div>
                </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column: Cards (Staggered Layout) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              variants={staggerContainer}
+            >
               {/* Column 1 */}
               <div className="space-y-6">
                 {benefits.filter((_, i) => i % 2 === 0).map((benefit) => {
                   const Icon = benefit.icon;
                   return (
-                    <div 
+                    <motion.div 
                       key={benefit.title}
-                      className={`group relative flex flex-col rounded-xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
+                      variants={fadeUp}
+                      className={`group relative flex flex-col rounded-xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-[3px] hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
                     >
                       <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg ${benefit.bgColor} ${benefit.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
                         <Icon className="h-7 w-7" strokeWidth={1.75} />
@@ -152,7 +167,7 @@ export default function WhyChooseUsSection() {
                       
                       {/* Accent Line on hover */}
                       <div className="absolute bottom-0 left-8 right-8 h-[3px] scale-x-0 bg-gradient-to-r from-indigo-500 to-cyan-500 transition-transform duration-500 group-hover:scale-x-100 rounded-t-full origin-left opacity-80" />
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
@@ -162,9 +177,10 @@ export default function WhyChooseUsSection() {
                 {benefits.filter((_, i) => i % 2 !== 0).map((benefit) => {
                   const Icon = benefit.icon;
                   return (
-                    <div 
+                    <motion.div 
                       key={benefit.title}
-                      className={`group relative flex flex-col rounded-xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
+                      variants={fadeUp}
+                      className={`group relative flex flex-col rounded-xl bg-white p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-[3px] hover:shadow-xl ${benefit.shadowColor} ${benefit.borderColor} hover:border-transparent`}
                     >
                       <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg ${benefit.bgColor} ${benefit.color} transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
                         <Icon className="h-7 w-7" strokeWidth={1.75} />
@@ -178,11 +194,11 @@ export default function WhyChooseUsSection() {
 
                       {/* Accent Line on hover */}
                       <div className="absolute bottom-0 left-8 right-8 h-[3px] scale-x-0 bg-gradient-to-r from-indigo-500 to-cyan-500 transition-transform duration-500 group-hover:scale-x-100 rounded-t-full origin-left opacity-80" />
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </Container>

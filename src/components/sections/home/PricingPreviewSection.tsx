@@ -1,6 +1,21 @@
 import { Section } from '../../ui/Section';
 import { Container } from '../../ui/Container';
 import { Check, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeUp } from '../../../utils/animations';
+
+const popularPlanVariant = {
+  hidden: { opacity: 0, scale: 0.95, y: 15 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+    }
+  },
+};
 
 const plans = [
   {
@@ -67,14 +82,21 @@ export default function PricingPreviewSection() {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-stretch">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-stretch"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+        >
           {plans.map((plan) => (
-            <div 
+            <motion.div 
               key={plan.name}
+              variants={plan.popular ? popularPlanVariant : fadeUp}
               className={`relative flex flex-col rounded-xl p-8 transition-all duration-300 ${
                 plan.popular 
-                  ? 'bg-white ring-1 ring-stone-300 shadow-md z-10 lg:scale-105' 
-                  : 'bg-white ring-1 ring-warm-sage shadow-sm lg:hover:scale-[1.02]'
+                  ? 'bg-white ring-1 ring-stone-300 shadow-md z-10 lg:scale-105 hover:-translate-y-1 hover:shadow-lg' 
+                  : 'bg-white ring-1 ring-warm-sage shadow-sm hover:-translate-y-1 hover:shadow-md'
               }`}
             >
               {plan.popular && (
@@ -125,9 +147,9 @@ export default function PricingPreviewSection() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );

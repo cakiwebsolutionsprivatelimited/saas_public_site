@@ -17,6 +17,8 @@ import {
   LayoutGrid,
   ArrowRight
 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeUp } from '../../../utils/animations';
 
 const getAppTheme = (appId: string) => {
   switch (appId) {
@@ -79,7 +81,13 @@ export default function FeaturedAppsSection() {
     <Section className="bg-slate-50 py-16 sm:py-20">
       <Container>
         {/* Section Header */}
-        <div className="text-center mx-auto mb-16 lg:mb-16 max-w-3xl">
+        <motion.div 
+          className="text-center mx-auto mb-16 lg:mb-16 max-w-3xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+          variants={fadeUp}
+        >
           <div className="inline-flex items-center rounded-md bg-indigo-100/80 px-4 py-1.5 font-heading text-sm font-bold text-indigo-800 ring-1 ring-inset ring-indigo-600/20 mb-6">
             App Ecosystem
           </div>
@@ -89,18 +97,25 @@ export default function FeaturedAppsSection() {
           <p className="text-lg leading-relaxed text-slate-600">
             Everything your business needs seamlessly connected in one ecosystem. Start with what you need, and add more later.
           </p>
-        </div>
+        </motion.div>
         
         {/* Ecosystem Masonry Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 w-full">
+        <motion.div 
+          className="columns-1 md:columns-2 lg:columns-3 gap-8 w-full"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+        >
           {CATEGORIES.map((category) => {
             const categoryApps = category.appIds.map(id => apps.find(a => a.id === id)).filter(Boolean);
             const CategoryIcon = category.icon;
             
             return (
-              <div 
+              <motion.div 
                 key={category.id} 
-                className="break-inside-avoid-column mb-8 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md"
+                variants={fadeUp}
+                className="break-inside-avoid-column mb-8 rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-slate-200 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-4 mb-8">
@@ -155,10 +170,10 @@ export default function FeaturedAppsSection() {
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                   </a>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );

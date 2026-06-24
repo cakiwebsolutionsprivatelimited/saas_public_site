@@ -14,6 +14,8 @@ import {
   CheckCircle2,
   ChevronRight
 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { staggerContainer, fadeUp, slideInLeft } from '../../../utils/animations';
 
 const industries = [
   {
@@ -99,9 +101,22 @@ export default function IndustrySolutionsSection() {
           
           {/* Left Column: Featured Panel */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-             <div className="group relative flex flex-col rounded-[2.5rem] bg-white ring-1 ring-warm-sage p-8 sm:p-10 shadow-sm overflow-hidden transition-all duration-500">
-               
-               <div key={activeIndustry.id} className="relative z-10 flex flex-col h-full animate-in fade-in slide-in-from-bottom-2 duration-500">
+             <motion.div 
+               variants={slideInLeft}
+               initial="hidden"
+               whileInView="visible"
+               viewport={{ once: true, margin: "-10%" }}
+               className="group relative flex flex-col rounded-[2.5rem] bg-white ring-1 ring-warm-sage p-8 sm:p-10 shadow-sm overflow-hidden transition-colors duration-500"
+             >
+               <AnimatePresence mode="wait">
+                 <motion.div 
+                   key={activeIndustry.id} 
+                   initial={{ opacity: 0, y: 10 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   exit={{ opacity: 0, y: -10 }}
+                   transition={{ duration: 0.3 }}
+                   className="relative z-10 flex flex-col h-full"
+                 >
                  <div className="mb-8">
                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-warm-sand text-indigo-600 ring-1 ring-inset ring-warm-sage mb-6 shadow-sm">
                      <ActiveIcon className="h-8 w-8" strokeWidth={1.5} />
@@ -136,31 +151,39 @@ export default function IndustrySolutionsSection() {
                  >
                    Explore Solution <ArrowRight className="h-4 w-4" />
                  </a>
-               </div>
-             </div>
+                 </motion.div>
+               </AnimatePresence>
+             </motion.div>
           </div>
 
           {/* Right Column: Industry Selector Grid */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+            >
               {industries.map((ind, idx) => {
                 const Icon = ind.icon;
                 const isActive = activeIndex === idx;
                 
                 return (
-                  <button 
+                  <motion.button 
                     key={ind.id}
+                    variants={fadeUp}
                     onClick={() => setActiveIndex(idx)}
-                    className={`group relative flex items-center justify-between rounded-lg p-4 text-left transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ${
+                    className={`group relative flex items-center justify-between rounded-lg p-4 text-left transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 ${
                       isActive 
                         ? 'bg-warm-cream ring-1 ring-stone-300 shadow-sm' 
                         : 'bg-white ring-1 ring-warm-sage hover:ring-1 hover:ring-stone-300 hover:bg-warm-cream shadow-sm'
                     }`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-md transition-all duration-200 bg-warm-sand ${
+                      <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-md transition-colors duration-200 bg-warm-sand ${
                         isActive 
-                          ? 'text-indigo-600 shadow-sm scale-105' 
+                          ? 'text-indigo-600 shadow-sm' 
                           : 'text-stone-500 group-hover:text-indigo-600'
                       }`}>
                         <Icon className="h-6 w-6" strokeWidth={1.5} />
@@ -173,15 +196,15 @@ export default function IndustrySolutionsSection() {
                         </h4>
                       </div>
                     </div>
-                    <ChevronRight className={`h-5 w-5 shrink-0 transition-transform ${
+                    <ChevronRight className={`h-5 w-5 shrink-0 transition-opacity ${
                       isActive 
-                        ? 'text-indigo-600 translate-x-0 opacity-100' 
-                        : 'text-stone-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-indigo-400'
+                        ? 'text-indigo-600 opacity-100' 
+                        : 'text-stone-400 opacity-0 group-hover:opacity-100 group-hover:text-indigo-400'
                     }`} />
-                  </button>
+                  </motion.button>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
 
         </div>

@@ -1,6 +1,8 @@
 import { Section } from '../../ui/Section';
 import { Container } from '../../ui/Container';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { staggerContainer, fadeUp } from '../../../utils/animations';
 
 const trustIndicators = [
   'Modular Apps',
@@ -13,7 +15,13 @@ export default function CTASection() {
   return (
     <Section className="relative overflow-hidden bg-warm-cream py-16 sm:py-20 border-t border-warm-sage">
       <Container className="relative z-10">
-        <div className="mx-auto max-w-4xl text-center">
+        <motion.div 
+          className="mx-auto max-w-4xl text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-10%" }}
+          variants={fadeUp}
+        >
           
           <div className="inline-flex items-center rounded-md bg-warm-sand px-4 py-1.5 font-heading text-sm font-bold text-stone-600 ring-1 ring-inset ring-warm-sage mb-8">
             Ready to Get Started?
@@ -45,16 +53,22 @@ export default function CTASection() {
             </a>
           </div>
           
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-8 border-t border-warm-sage">
+          <motion.div 
+            className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 pt-8 border-t border-warm-sage"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {trustIndicators.map((indicator) => (
-              <div key={indicator} className="flex items-center gap-2 text-sm font-medium text-stone-500">
+              <motion.div key={indicator} variants={fadeUp} className="flex items-center gap-2 text-sm font-medium text-stone-500">
                 <CheckCircle2 className="h-5 w-5 text-indigo-600" />
                 {indicator}
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </Container>
     </Section>
   );
