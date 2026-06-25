@@ -89,10 +89,10 @@ export default function Apps() {
             variants={fadeUp}
             className="max-w-5xl mx-auto bg-white border border-warm-sage rounded-xl p-8 md:p-12 shadow-sm mb-16 hidden sm:block relative"
           >
-             <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative z-10">
+             <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 relative z-10">
                {categories.map((cat, idx) => (
                  <React.Fragment key={cat.id}>
-                   <motion.div variants={fadeUp} className="flex flex-col items-center group">
+                   <div className="flex flex-col items-center group">
                      <div className="h-20 w-20 rounded-lg bg-white border border-warm-sage flex items-center justify-center text-indigo-600 mb-4 shadow-sm group-hover:border-indigo-400 group-hover:shadow-md group-hover:-translate-y-1 transition-all">
                        {cat.id === 'sales-crm' && <Users className="h-8 w-8" />}
                        {cat.id === 'finance' && <TrendingUp className="h-8 w-8" />}
@@ -101,7 +101,7 @@ export default function Apps() {
                        {cat.id === 'growth' && <LayoutGrid className="h-8 w-8" />}
                      </div>
                      <span className="font-bold text-stone-900 text-sm text-center tracking-wide">{cat.name}</span>
-                   </motion.div>
+                   </div>
                    {idx < categories.length - 1 && (
                      <div className="text-warm-sage flex-grow flex justify-center items-center">
                        <ArrowRight className="h-6 w-6" />
@@ -109,7 +109,7 @@ export default function Apps() {
                    )}
                  </React.Fragment>
                ))}
-             </motion.div>
+             </div>
              {/* Subtle connecting background line behind the icons */}
              <div className="absolute top-1/2 left-16 right-16 h-px bg-warm-sage z-0 -translate-y-4"></div>
           </motion.div>
@@ -307,13 +307,12 @@ export default function Apps() {
 
                   {/* Structured Cards Side (40% visually) */}
                   <motion.div variants={isEven ? slideInRight : slideInLeft} className="lg:w-1/2 w-full">
-                    <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {categoryApps.map(app => {
                         const Icon = app.icon;
                         return (
-                          <motion.div 
+                          <div 
                             key={app.id}
-                            variants={fadeUp}
                             className="bg-white border border-warm-sage rounded-lg p-6 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all group"
                           >
                             <div className="flex items-center mb-6">
@@ -325,10 +324,10 @@ export default function Apps() {
                             <Link to={`/apps/${app.slug}`} className="text-sm font-bold text-indigo-600 group-hover:text-indigo-700 flex items-center">
                               Explore module <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </Link>
-                          </motion.div>
+                          </div>
                         );
                       })}
-                    </motion.div>
+                    </div>
                   </motion.div>
 
                 </motion.div>
@@ -383,9 +382,9 @@ export default function Apps() {
 
                 {/* 60% Flow Side */}
                 <div className="w-full lg:w-[60%] bg-warm-cream rounded-xl border border-warm-sage p-8 lg:p-12 flex items-center justify-center">
-                  <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex flex-col md:flex-row items-start justify-between w-full relative">
+                  <div className="flex flex-col md:flex-row items-start justify-between w-full relative">
                     {/* Desktop connector line */}
-                    <motion.div variants={fadeUp} className="hidden md:block absolute top-10 left-12 right-12 h-1 bg-warm-sage z-0 rounded-full"></motion.div>
+                    <div className="hidden md:block absolute top-10 left-12 right-12 h-1 bg-warm-sage z-0 rounded-full"></div>
                     
                     {workflow.apps.map((step, appIdx) => {
                       const app = apps.find(a => a.id === step.id);
@@ -393,7 +392,7 @@ export default function Apps() {
                       const Icon = app.icon;
                       return (
                         <React.Fragment key={app.id}>
-                          <motion.div variants={fadeUp} className="flex flex-col items-center relative z-10 flex-1 group mt-4 md:mt-0">
+                          <div className="flex flex-col items-center relative z-10 flex-1 group mt-4 md:mt-0">
                             <div className="h-20 w-20 rounded-lg bg-white border-2 border-indigo-100 flex items-center justify-center text-indigo-600 shadow-sm mb-6 group-hover:border-indigo-600 group-hover:-translate-y-1 group-hover:shadow-md transition-all duration-300">
                               {Icon && <Icon className="h-8 w-8" />}
                             </div>
@@ -401,23 +400,23 @@ export default function Apps() {
                               <span className="font-extrabold text-stone-900 text-base lg:text-lg mb-1">{step.label}</span>
                               <span className="text-xs font-bold text-stone-500 uppercase tracking-widest">{app.name}</span>
                             </div>
-                          </motion.div>
+                          </div>
                           
                           {appIdx < workflow.apps.length - 1 && (
-                            <motion.div variants={fadeUp} className="flex items-center justify-center text-indigo-300 md:hidden h-16 z-0 w-full">
+                            <div className="flex items-center justify-center text-indigo-300 md:hidden h-16 z-0 w-full">
                               <ArrowDown className="h-8 w-8" />
-                            </motion.div>
+                            </div>
                           )}
                           
                           {appIdx < workflow.apps.length - 1 && (
-                            <motion.div variants={fadeUp} className="hidden md:flex items-center justify-center text-indigo-300 w-10 pt-6 z-10 relative bg-warm-cream px-1">
+                            <div className="hidden md:flex items-center justify-center text-indigo-300 w-10 pt-6 z-10 relative bg-warm-cream px-1">
                               <ArrowRight className="h-8 w-8" />
-                            </motion.div>
+                            </div>
                           )}
                         </React.Fragment>
                       );
                     })}
-                  </motion.div>
+                  </div>
                 </div>
 
               </motion.div>
