@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter basename="/saas_public_site">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <AppRoutes />
     </BrowserRouter>
   );

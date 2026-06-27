@@ -10,14 +10,17 @@ import Login from '../pages/Login';
 export default function AppRoutes() {
   return (
     <Routes>
+      {/* Marketing pages — with Header + Footer */}
       <Route element={<WebsiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/apps" element={<Apps />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/request-demo" element={<RequestDemo />} />
-        <Route path="/login" element={<Login />} />
       </Route>
+
+      {/* Application auth pages — isolated, no marketing shell */}
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
