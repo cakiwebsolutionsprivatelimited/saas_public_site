@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="relative z-10">
             <Link
               to={CTA_ROUTES.requestDemo}
-              className="group shrink-0 inline-flex items-center justify-center gap-2 rounded-md bg-indigo-600 px-8 py-4 text-base font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="group shrink-0 inline-flex h-14 items-center justify-center gap-2 rounded-md bg-indigo-600 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Request Demo
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

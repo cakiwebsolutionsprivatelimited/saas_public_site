@@ -3,6 +3,8 @@ import { Container } from '../../ui/Container';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { staggerContainer, fadeUp } from '../../../utils/animations';
+import { Link } from 'react-router-dom';
+import { CTA_ROUTES } from '../../../constants';
 
 const trustIndicators = [
   'Modular Apps',
@@ -37,20 +39,20 @@ export default function CTASection() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <a
-              href="#request-demo"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-md bg-indigo-600 px-8 py-4 text-base font-bold text-white hover:bg-indigo-500 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-warm-cream shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            <Link
+              to={CTA_ROUTES.requestDemo}
+              className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-md bg-indigo-600 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Request Demo
-              <ArrowRight className="h-5 w-5" />
-            </a>
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
             
-            <a
-              href="#explore-apps"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-md bg-white px-8 py-4 text-base font-bold text-stone-900 hover:bg-warm-cream transition-all ring-1 ring-inset ring-warm-sage shadow-sm focus:outline-none focus:ring-2 focus:ring-stone-400 focus:ring-offset-2 focus:ring-offset-warm-cream"
+            <Link
+              to="/apps"
+              className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-md bg-white border border-stone-300 px-8 text-lg font-bold text-stone-900 shadow-sm transition-all hover:bg-stone-50 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Explore Apps
-            </a>
+            </Link>
           </div>
           
           <motion.div 

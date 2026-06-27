@@ -325,7 +325,7 @@ export default function Industries() {
                       to={CTA_ROUTES.requestDemo}
                       className="inline-flex items-center font-bold text-indigo-600 hover:text-indigo-800 text-lg group"
                     >
-                      Discuss our architecture <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      Request Demo <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </motion.div>
 
@@ -369,6 +369,8 @@ export default function Industries() {
                           onClick={() => toggleFaq(idx)}
                           className="w-full text-left py-6 flex items-start justify-between focus:outline-none"
                           aria-expanded={openFaqIndex === idx}
+                          aria-controls={`faq-content-${idx}`}
+                          id={`faq-button-${idx}`}
                         >
                           <span className={`font-bold text-lg pr-8 ${openFaqIndex === idx ? 'text-indigo-600' : 'text-stone-900'}`}>
                             {faq.q}
@@ -380,6 +382,9 @@ export default function Industries() {
                         <AnimatePresence initial={false}>
                           {openFaqIndex === idx && (
                             <motion.div
+                              id={`faq-content-${idx}`}
+                              role="region"
+                              aria-labelledby={`faq-button-${idx}`}
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: 'auto', opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
@@ -419,13 +424,13 @@ export default function Industries() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to={CTA_ROUTES.requestDemo}
-                  className="w-full sm:w-auto inline-flex h-16 items-center justify-center rounded-md bg-stone-900 px-12 text-xl font-bold text-white shadow-sm transition-all hover:bg-stone-800 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream"
+                  className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-md bg-stone-900 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-stone-800 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream"
                 >
-                  Schedule Consultation
+                  Request Demo
                 </Link>
                 <Link
                   to={CTA_ROUTES.pricing}
-                  className="w-full sm:w-auto inline-flex h-16 items-center justify-center rounded-md bg-transparent border border-stone-300 px-12 text-xl font-bold text-stone-900 transition-all hover:bg-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream"
+                  className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-md bg-transparent border border-stone-300 px-8 text-lg font-bold text-stone-900 transition-all hover:bg-stone-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream"
                 >
                   View Enterprise Pricing
                 </Link>

@@ -37,7 +37,7 @@ export default function HeroSection() {
               {/* Badge */}
               <motion.div variants={fadeUp} className="inline-flex w-fit items-center rounded-md border border-warm-sage bg-warm-cream px-4 py-1.5 text-sm font-semibold text-stone-700 shadow-sm">
                 <span className="mr-2 flex h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></span>
-                The Business Operating System
+                The Connected Platform
               </motion.div>
               
               {/* Headline */}

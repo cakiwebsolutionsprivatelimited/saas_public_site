@@ -73,7 +73,7 @@ export default function Pricing() {
         "Standard Reporting"
       ],
       highlighted: false,
-      ctaText: "Start Free Trial",
+      ctaText: "Request Demo",
       ctaLink: CTA_ROUTES.requestDemo
     },
     {
@@ -89,7 +89,7 @@ export default function Pricing() {
         "Inventory Management"
       ],
       highlighted: true, // Subtle highlighting
-      ctaText: "Start Free Trial",
+      ctaText: "Request Demo",
       ctaLink: CTA_ROUTES.requestDemo
     },
     {
@@ -105,7 +105,7 @@ export default function Pricing() {
         "Advanced Analytics"
       ],
       highlighted: false,
-      ctaText: "Start Free Trial",
+      ctaText: "Request Demo",
       ctaLink: CTA_ROUTES.requestDemo
     },
     {
@@ -121,7 +121,7 @@ export default function Pricing() {
         "Dedicated Account Manager"
       ],
       highlighted: false,
-      ctaText: "Contact Sales",
+      ctaText: "Request Demo",
       ctaLink: CTA_ROUTES.requestDemo
     }
   ];
@@ -204,7 +204,7 @@ export default function Pricing() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="lg:w-5/12 bg-warm-cream p-10 rounded-2xl border border-warm-sage"
             >
-              <h3 className="text-2xl font-bold text-stone-900 mb-6">Our Pricing Philosophy</h3>
+              <h2 className="text-2xl font-bold text-stone-900 mb-6">Our Pricing Philosophy</h2>
               <ul className="space-y-6">
                 <li className="flex items-start">
                   <div className="h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4 shrink-0 mt-0.5">
@@ -325,7 +325,7 @@ export default function Pricing() {
                           {profile.icon}
                         </div>
                         <div>
-                          <h4 className={`font-bold text-lg ${isActive ? 'text-indigo-900' : 'text-stone-900'}`}>{profile.title}</h4>
+                          <h3 className={`font-bold text-lg ${isActive ? 'text-indigo-900' : 'text-stone-900'}`}>{profile.title}</h3>
                           <span className={`text-sm font-medium ${isActive ? 'text-indigo-700' : 'text-stone-500'}`}>{profile.subtitle}</span>
                         </div>
                       </div>
@@ -356,7 +356,7 @@ export default function Pricing() {
                     {profiles[activeProfileIndex].description}
                   </p>
                   
-                  <a href="#pricing-plans" className="inline-flex items-center justify-center rounded-md bg-stone-900 px-8 py-4 text-base font-bold text-white transition-all hover:bg-stone-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream">
+                  <a href="#pricing-plans" className="inline-flex h-14 items-center justify-center rounded-md bg-stone-900 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-stone-800 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-cream">
                     View Pricing Details
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
@@ -469,10 +469,10 @@ export default function Pricing() {
 
                 <Link
                   to={plan.ctaLink}
-                  className={`w-full h-12 inline-flex items-center justify-center rounded-md text-sm font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                  className={`w-full h-12 inline-flex items-center justify-center rounded-md text-base font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                     plan.highlighted
-                      ? 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm focus-visible:ring-indigo-600'
-                      : 'bg-white border border-stone-300 text-stone-900 hover:bg-stone-50 focus-visible:ring-stone-500'
+                      ? 'bg-indigo-600 text-white hover:bg-indigo-500 hover:-translate-y-0.5 shadow-sm hover:shadow-md focus-visible:ring-indigo-600'
+                      : 'bg-white border border-stone-300 text-stone-900 hover:bg-stone-50 hover:-translate-y-0.5 shadow-sm hover:shadow-md focus-visible:ring-stone-500'
                   }`}
                 >
                   {plan.ctaText}
@@ -570,6 +570,8 @@ export default function Pricing() {
                     onClick={() => toggleFaq(idx)}
                     className="w-full text-left py-6 flex items-start justify-between focus:outline-none"
                     aria-expanded={openFaqIndex === idx}
+                    aria-controls={`faq-content-${idx}`}
+                    id={`faq-button-${idx}`}
                   >
                     <span className={`font-bold text-lg pr-8 ${openFaqIndex === idx ? 'text-indigo-600' : 'text-stone-900'}`}>
                       {faq.question}
@@ -581,6 +583,9 @@ export default function Pricing() {
                   <AnimatePresence initial={false}>
                     {openFaqIndex === idx && (
                       <motion.div
+                        id={`faq-content-${idx}`}
+                        role="region"
+                        aria-labelledby={`faq-button-${idx}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -618,15 +623,15 @@ export default function Pricing() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to={CTA_ROUTES.requestDemo}
-                className="w-full sm:w-auto inline-flex h-16 items-center justify-center rounded-md bg-stone-900 px-12 text-xl font-bold text-white shadow-sm transition-all hover:bg-stone-800 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-sand"
+                className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-md bg-stone-900 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-stone-800 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-sand"
               >
-                Talk to Sales
+                Request Demo
               </Link>
               <Link
-                to={CTA_ROUTES.requestDemo}
-                className="w-full sm:w-auto inline-flex h-16 items-center justify-center rounded-md bg-transparent border border-stone-300 px-12 text-xl font-bold text-stone-900 transition-all hover:bg-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-sand"
+                to="/apps"
+                className="w-full sm:w-auto inline-flex h-14 items-center justify-center rounded-md bg-transparent border border-stone-300 px-8 text-lg font-bold text-stone-900 transition-all hover:bg-stone-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2 focus-visible:ring-offset-warm-sand"
               >
-                Start Free Trial
+                Explore Apps
               </Link>
             </div>
           </motion.div>

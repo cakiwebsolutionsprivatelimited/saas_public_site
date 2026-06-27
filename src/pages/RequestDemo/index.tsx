@@ -355,12 +355,15 @@ export default function RequestDemo() {
                   <button 
                     onClick={() => toggleFaq(i)}
                     className="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none focus:bg-indigo-50/50 transition-colors"
+                    aria-expanded={openFaq === i}
+                    aria-controls={`faq-content-${i}`}
+                    id={`faq-button-${i}`}
                   >
                     <span className="font-extrabold text-stone-900 text-lg pr-8">{faq.question}</span>
                     {openFaq === i ? <ChevronUp className="h-6 w-6 text-indigo-600 shrink-0" /> : <ChevronDown className="h-6 w-6 text-stone-400 shrink-0" />}
                   </button>
                   {openFaq === i && (
-                    <div className="px-8 pb-6 pt-2 text-stone-600 font-medium leading-relaxed border-t border-stone-100 text-lg">
+                    <div id={`faq-content-${i}`} role="region" aria-labelledby={`faq-button-${i}`} className="px-8 pb-6 pt-2 text-stone-600 font-medium leading-relaxed border-t border-stone-100 text-lg">
                       {faq.answer}
                     </div>
                   )}
@@ -384,7 +387,7 @@ export default function RequestDemo() {
             </p>
             <a
               href="#form"
-              className="inline-flex h-16 items-center justify-center rounded-md bg-indigo-600 px-12 text-xl font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
+              className="inline-flex h-14 items-center justify-center rounded-md bg-indigo-600 px-8 text-lg font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
             >
               Book Your Consultation
               <ArrowRight className="ml-3 h-6 w-6" />

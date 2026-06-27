@@ -74,7 +74,7 @@ export default function Header() {
             </Link>
             <Link
               to={CTA_ROUTES.requestDemo}
-              className="group inline-flex items-center justify-center gap-2 rounded-md bg-indigo-600 px-6 py-2.5 text-sm font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-indigo-600 h-10 px-5 text-sm font-bold text-white shadow-sm transition-all hover:bg-indigo-500 hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2"
             >
               {SITE_CONFIG.primaryCTA}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
